@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MCQs Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+      body {
+        padding: 50px;
+        background-color: #f5f5f5;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      .question {
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      .options {
+        margin-bottom: 20px;
+      }
+      .option {
+        margin-bottom: 10px;
+      }
+      .submit-btn {
+        margin-top: 20px;
+      }
+      .result {
+        margin-top: 20px;
+      }
+      .correct {
+        color: green;
+      }
+      .incorrect {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>MCQs Example</h1>
+
+      <div id="single-choice">
+        <div class="question">Which of the following is the highest civilian award of India ?</div>
+        <form id="single-choice-form">
+          <div class="options">
+            <div class="form-check option">
+              <input class="form-check-input" type="radio" name="answer" id="option1" value="a">
+              <label class="form-check-label" for="option1">
+                Padma Bhushan 
+              </label>
+            </div>
+            <div class="form-check option">
+              <input class="form-check-input" type="radio" name="answer" id="option2" value="b">
+              <label class="form-check-label" for="option2">
+                Bharat Ratna
+              </label>
+            </div>
+            <div class="form-check option">
+              <input class="form-check-input" type="radio" name="answer" id="option3" value="c">
+              <label class="form-check-label" for="option3">
+                Padma Shre
+              </label>
+            </div>
+            <div class="form-check option">
+              <input class="form-check-input" type="radio" name="answer" id="option4" value="d">
+              <label class="form-check-label" for="option4">
+                nanpith Award 
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+        </form>
+        <div id="single-choice-result" class="result"></div>
+      </div>
+
+      <!-- Add more MCQs here -->
+
+    </div>
+
+    <script>
+      const singleChoiceForm = document.getElementById('single-choice-form');
+      const singleChoiceResult = document.getElementById('single-choice-result');
+
+      singleChoiceForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const answer = singleChoiceForm.elements['answer'].value;
+
+        if (answer === 'a') {
+          singleChoiceResult.innerHTML = '<p class="correct">Correct Answer!</p>';
+        } else {
+          singleChoiceResult.innerHTML = '<p class="incorrect">Incorrect Answer!</p>';
+        }
+      });
+    </script>
+  </body>
+</html>
